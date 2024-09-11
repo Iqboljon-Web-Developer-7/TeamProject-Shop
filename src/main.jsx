@@ -8,8 +8,6 @@ import Pages from "./pages/pages";
 import { Provider } from "react-redux";
 import { store } from "./redux";
 
-let s = 1;
-
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <BrowserRouter>
