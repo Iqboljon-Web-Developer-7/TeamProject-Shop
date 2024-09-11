@@ -8,7 +8,7 @@ import React from "react";
 const Header = () => {
   return(
    <header>
-      <h1 className="text-green-300 text-center text-6xl p-3 my-8 dark:text-white dark:bg-black">
+      <h1 className="text-green-300 text-center text-6xl  py-2 dark:text-white dark:bg-black">
         Hello
       </h1>
       <button
