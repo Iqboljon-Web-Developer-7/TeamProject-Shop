@@ -5,11 +5,11 @@ import React from "react";
 
 const Home = () => {
   return (
-    <section>
+    <>
       <Header />
       <Hero />
       <Brands />
-    </section>
+    </>
   );
 };
 
