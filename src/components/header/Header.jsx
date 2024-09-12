@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import "./Header.css"
 import { Link } from 'react-router-dom';
-import { IoIosArrowDown } from "react-icons/io";
 import { IoMenu } from "react-icons/io5";
 import { NavLink } from "react-router-dom";
 import { FaSun } from "react-icons/fa6";

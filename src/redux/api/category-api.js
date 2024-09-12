@@ -2,44 +2,41 @@ import { api } from "./index";
 
 export const categoryApi = api.injectEndpoints({
   endpoints: (build) => ({
-    getCategory: build.query({
+    getProduct: build.query({
       query: (params) => ({
-        url: "/category",
+        url: "/products",
         params,
       }),
-      providesTags: ["Category"],
+      providesTags: ["Products"],
     }),
-    createCategory: build.mutation({
+    createProduct: build.mutation({
       query: (body) => ({
-        url: "/category",
+        url: "/products",
         method: "POST",
         body,
       }),
-      invalidatesTags: ["Category"],
+      invalidatesTags: ["Products"],
     }),
-    updateCategory: build.mutation({
-      query: (id, body) => ({
-        url: `/category/${id}`,
+    updateProduct: build.mutation({
+      query: ({ id, body }) => ({
+        url: `/products/${id}`,
         method: "PUT",
         body,
       }),
     }),
-    deleteCategory: build.mutation({
+    deleteProduct: build.mutation({
       query: (id) => ({
-        url: `/category/${id}`,
+        url: `/products/${id}`,
         method: "DELETE",
       }),
-      invalidatesTags: ["Category"],
+      invalidatesTags: ["Products"],
     }),
   }),
 });
 
-// GET -> build.query
-// POST, PUT, PATCH, DELETE -> build.mutation
-
 export const {
-  useCreateCategoryMutation,
-  useDeleteCategoryMutation,
-  useGetCategoryQuery,
-  useUpdateCategoryMutation,
+  useGetProductQuery,
+  useCreateProductMutation,
+  useUpdateProductMutation,
+  useDeleteProductMutation,
 } = categoryApi;

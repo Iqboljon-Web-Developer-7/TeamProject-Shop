@@ -1,16 +1,14 @@
-import AddCard from "@/components/addCard/AddCard";
-import Header from "@/components/header/Header";
+import Brands from "@/components/brands/Brands";
 import Hero from "@/components/hero/Hero";
 import React from "react";
 
 const Home = () => {
   return (
-    <section>
-      <Header />
-      {/* <AddCard /> */}
-      
+    <div>
       <Hero />
-    </section>
+      <Brands />
+      </div>
+
   );
 };
 
