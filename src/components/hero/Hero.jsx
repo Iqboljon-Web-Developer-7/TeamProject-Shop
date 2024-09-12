@@ -3,6 +3,7 @@ import "./Hero.scss";
 import rasm from "../../assets/hero.jpg";
 const Hero = () => {
   return (
+    <div className="bg-[#F2F0F1] dark:text-white dark:bg-black">
     <div className="hero bg-[#F2F0F1] flex flex-wrap justify-between pt-20 mt-[-90px] container mx-auto px-5 dark:text-white dark:bg-black">
       <div>
         <p className="hero__title text-5xl w-[420px] font-[900]">
@@ -38,6 +39,7 @@ const Hero = () => {
       <div className="w-[40%] mt-[-80px] ccc">
         <img className="rounded-[30px]" src={rasm} alt="foto" />
       </div>
+    </div>
     </div>
   );
 };
