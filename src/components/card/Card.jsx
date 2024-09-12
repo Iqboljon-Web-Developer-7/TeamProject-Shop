@@ -14,6 +14,12 @@ const Card = ({ data, error, isLoading }) => {
 
   return (
     <div className="flex flex-col min-h-screen p-4">
+      <div className="container mx-auto my-8 ">
+        <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          Popular Products
+        </h1>
+      </div>
+
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 mx-auto container gap-6 mb-6">
         {slicedData?.map((product) => (
           <div
