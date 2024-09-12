@@ -7,7 +7,7 @@ import { Provider } from "react-redux";
 import { store } from "./redux";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <div className=" dark:text-white dark:bg-black min-h-screen container mx-auto px-5">
+  <div className=" dark:text-white dark:bg-black min-h-screen ">
   <React.StrictMode>
     <BrowserRouter>
       <Provider store={store}>

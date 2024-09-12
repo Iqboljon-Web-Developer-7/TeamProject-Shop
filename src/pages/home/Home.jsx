@@ -8,6 +8,7 @@ const Home = () => {
     <section>
       <Header />
       {/* <AddCard /> */}
+      
       <Hero />
     </section>
   );
