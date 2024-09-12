@@ -11,7 +11,7 @@ const Footer = () => {
    <div className="footer py-10">
 
 
-    <div className="footer__top flex container mx-auto px-5  bg-black mt-4 rounded-[20px] py-9 dark:bg-white dark:text-black  "> 
+    <div className="footer__top flex flex-wrap container mx-auto px-5  bg-black mt-4 rounded-[20px] py-9 dark:bg-white dark:text-black  "> 
       <div> 
         <p className="text-5xl font-[900] w-[700px] text-white dark:text-black">STAY UPTO DATE ABOUT OUR LATEST OFFERS </p>
       </div>
@@ -26,9 +26,9 @@ const Footer = () => {
     </div>
 <div className="bg-[#F0F0F0] dark:bg-black py-[50px]">
 
-    <div className="footer__bottom container mx-auto px-5 mt-5">
+    <div className="footer__bottom container mx-auto px-5 mt-5 justify-between flex flex-wrap">
 
-      <div className="footer__card">
+      <div className="footer__card px-[80px] mt-[20px]">
       <p className="dark:text-white text-5xl font-[900] navbar__logo">
                 SHOP.CO
               </p>
@@ -47,10 +47,40 @@ const Footer = () => {
               <button className="">     
               <FaGithub className="text-3xl mx-2" />
               </button> 
-       
-        
               </div>
       </div>
+
+<div className="footer__card px-[80px] mt-[20px]">
+  <p className="footer__title text-3xl font-[700]">Company</p>
+  <p className="footer__text mt-5 text-xl">About</p>
+  <p className="footer__text mt-5 text-xl">Features</p>
+  <p className="footer__text mt-5 text-xl">Works</p>
+  <p className="footer__text mt-5 text-xl">Career</p>
+</div>
+      
+<div className="footer__card px-[80px] mt-[20px]">
+  <p className="footer__title text-3xl font-[700]">Help</p>
+  <p className="footer__text mt-5 text-xl">Customer Support</p>
+  <p className="footer__text mt-5 text-xl">Delivery Details</p>
+  <p className="footer__text mt-5 text-xl">Terms & Conditions</p>
+  <p className="footer__text mt-5 text-xl">Privacy Policy</p>
+</div>
+
+<div className="footer__card px-[80px] mt-[20px]">
+  <p className="footer__title text-3xl font-[700]">FAQ</p>
+  <p className="footer__text mt-5 text-xl">Account</p>
+  <p className="footer__text mt-5 text-xl">Manage Deliveries</p>
+  <p className="footer__text mt-5 text-xl">Orders</p>
+  <p className="footer__text mt-5 text-xl">Payments</p>
+</div>
+
+<div className="footer__card px-[80px] mt-[20px]">
+  <p className="footer__title text-3xl font-[700]">Resources</p>
+  <p className="footer__text mt-5 text-xl">Free eBooks</p>
+  <p className="footer__text mt-5 text-xl">Development Tutorial</p>
+  <p className="footer__text mt-5 text-xl">How to - Blog</p>
+  <p className="footer__text mt-5 text-xl">Youtube Playlist</p>
+</div>
     </div>
     </div>
 <div className="hr"></div>

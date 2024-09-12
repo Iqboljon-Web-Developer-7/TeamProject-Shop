@@ -106,7 +106,7 @@ const Header = () => {
                 className={
                   " text-black dark:text-white  flex gap-0 items-center"
                 }
-                to={"/wishlist"}
+                to={"/card"}
               >
                 <IoCartOutline className="text-2xl" />
                 <sup

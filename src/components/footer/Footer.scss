@@ -3,6 +3,12 @@
   &__top{
     justify-content: space-between !important;
   }
+
+  &__text{
+    transition: 1s;
+  }
+
+  
 }
 
 input{
@@ -14,3 +20,9 @@ input{
   width: 100% !important;
 background-color: #ddd !important;
 }
+
+.footer__text:hover{
+color: gold;
+cursor: pointer;
+}
+
