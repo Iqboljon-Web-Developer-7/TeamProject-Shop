@@ -5,13 +5,13 @@ import Layout from "@/components/layout/Layout";
 
 const Pages = () => {
   return (
-    <>
+    <section className="font-Montserrat">
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route path="" element={<Home />} />
         </Route>
       </Routes>
-    </>
+    </section>
   );
 };
 
