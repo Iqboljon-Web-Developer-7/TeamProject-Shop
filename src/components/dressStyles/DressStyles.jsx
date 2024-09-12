@@ -7,7 +7,7 @@ import img4 from "@/assets/dressStyle/grid-4.png";
 
 const DressStyles = () => {
   return (
-    <section className="mx-4 mt-20 py-[4.375rem] bg-[#F0F0F0] rounded-3xl">
+    <section className="mx-4 mt-20 px-5 py-[4.375rem] bg-[#F0F0F0] rounded-3xl dark:bg-black dark:border">
       <div className="wrapper max-w-[45rem] lg:max-w-[90rem]">
         <h2 className="text-4xl text-center font-bold">
           BROWSE BY DRESS STYLE

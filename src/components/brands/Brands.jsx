@@ -1,4 +1,5 @@
 import React from "react";
+import "./Brands.scss";
 import brands1 from "../../assets/brands1.svg";
 import brands2 from "../../assets/brands2.svg";
 import brands3 from "../../assets/brands3.png";
@@ -7,7 +8,7 @@ import brands5 from "../../assets/brands5.svg";
 
 const Brands = () => {
   return (
-    <div className="bg-black overflow-hidden">
+    <div className="bg-black overflow-hidden dark:border py-10 ">
       <div className="flex w-[200%] animate-scroll">
         <div className="flex justify-around items-center py-8 space-x-8 w-[50%]">
           <img src={brands1} className="w-[200px] h-8" alt="Brand 1" />

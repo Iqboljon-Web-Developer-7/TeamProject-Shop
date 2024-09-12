@@ -7,6 +7,8 @@ import { FaSun } from "react-icons/fa6";
 import { FaRegHeart } from "react-icons/fa";
 import { IoCartOutline } from "react-icons/io5";
 import { LuDelete } from "react-icons/lu";
+import { IoIosSearch } from "react-icons/io";
+
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -41,7 +43,7 @@ const Header = () => {
             <div className="flex gap-1 items-center px-2 text-black	  ">
               <div className="flex w-28 mx-9 items-center">
                 <select
-                  className="outline-none	  text-xl text-dark dark:text-white dark:bg-black cursor-pointer  "
+                  className="outline-none	  text-[18px] text-dark dark:text-white dark:bg-black cursor-pointer  "
                   name=""
                   id=""
                 >
@@ -52,13 +54,13 @@ const Header = () => {
                 </select>
               </div>
 
-              <p className="mx-2 text-xl text-dark dark:text-white dark:bg-black cursor-pointer heder__item">
+              <p className="mx-2 text-[18px] text-dark dark:text-white dark:bg-black cursor-pointer heder__item">
                 On Sale
               </p>
-              <p className="mx-2 text-xl text-dark dark:text-white dark:bg-black cursor-pointer heder__item">
+              <p className="mx-2 text-[18px] text-dark dark:text-white dark:bg-black cursor-pointer heder__item">
                 New Arrivals
               </p>
-              <p className="mx-2 text-xl text-dark dark:text-white dark:bg-black cursor-pointer heder__item">
+              <p className="mx-2 text-[18px] text-dark dark:text-white dark:bg-black cursor-pointer heder__item">
                 Brands
               </p>
             </div>
@@ -67,7 +69,14 @@ const Header = () => {
             className="flex gap-1 p-2 border h_map  items-center rounded-md bg-white dark:text-white dark:bg-black 
 
 "
-          ></div>
+          >
+            <div className="header__bag flex ">
+<button><IoIosSearch />
+</button>
+<input type="text" className="text-black dark:bg-black dark:text-white"  placeholder="Search for products..."/>
+</div>
+
+          </div>
           <div
             className={`nav__collect ${
               isMenuOpen ? "show" : ""
@@ -111,6 +120,9 @@ text-white bg-lime-600"
               </NavLink>
             </ul>
           </div>
+
+
+
 
           <div className="flex gap-2 items-center">
             <button
