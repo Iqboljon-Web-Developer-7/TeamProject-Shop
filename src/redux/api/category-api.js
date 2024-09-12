@@ -3,9 +3,9 @@ import { api } from "./index";
 export const categoryApi = api.injectEndpoints({
   endpoints: (build) => ({
     getProduct: build.query({
-      query: ({ limit }) => ({
-        url: "/products",
-        params: { limit },
+      query: (params) => ({
+        url: `/products`,
+        params,
       }),
       providesTags: ["Products"],
     }),
