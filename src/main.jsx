@@ -10,6 +10,7 @@ import { store } from "./redux";
 import InitialLoading from "./components/initialLoading/InitialLoading";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
+  <div className=" dark:text-white dark:bg-black min-h-screen ">
   <React.StrictMode>
     <Provider store={store}>
       <Suspense fallback={<InitialLoading />}>
@@ -19,4 +20,5 @@ ReactDOM.createRoot(document.getElementById("root")).render(
       </Suspense>
     </Provider>
   </React.StrictMode>
+  </div>
 );
