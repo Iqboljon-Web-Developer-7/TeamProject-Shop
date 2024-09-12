@@ -3,11 +3,6 @@ module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   darkMode: "class",
   theme: {
-    extend: {},
-  },
-  plugins: [],
-
-  theme: {
     extend: {
       keyframes: {
         scroll: {
@@ -17,6 +12,9 @@ module.exports = {
       },
       animation: {
         scroll: "scroll 10s linear infinite",
+      },
+      fontFamily: {
+        Montserrat: ["Montserrat", "sans-serif"],
       },
     },
   },

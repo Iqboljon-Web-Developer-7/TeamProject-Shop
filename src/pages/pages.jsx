@@ -6,14 +6,14 @@ import Not from "@/components/not-found/Not";
 
 const Pages = () => {
   return (
-    <>
+    <section className="font-Montserrat">
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route path="" element={<Home />} />
         <Route path="*" element={<Not/>}/>
         </Route>
       </Routes>
-    </>
+    </section>
   );
 };
 
