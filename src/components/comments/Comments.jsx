@@ -16,7 +16,7 @@ import { Autoplay, Navigation, Pagination } from "swiper/modules";
 
 export default function Comments() {
   return (
-    <div className="wrapper py-10 max-w-[95rem]">
+    <div className="wrapper py-10 max-w-[95rem] dark:text-black">
       <div className="info my-4">
         <h2 className="text-5xl font-extrabold">OUR HAPPY CUSTOMERS</h2>
       </div>
