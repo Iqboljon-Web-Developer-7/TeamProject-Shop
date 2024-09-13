@@ -13,7 +13,7 @@ const Card = ({ data, error, isLoading }) => {
   const slicedData = data?.slice(startIndex, startIndex + itemsPerPage);
 
   return (
-    <div className="flex flex-col min-h-screen p-4">
+    <div className="flex flex-col  p-4">
       <div className="container mx-auto my-8 ">
         <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
           Popular Products
