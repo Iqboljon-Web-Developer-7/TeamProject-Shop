@@ -111,7 +111,7 @@ const Footer = () => {
             <img src={svg} alt="Logo" className="w-10 h-10 object-contain" />
             <img src={img} alt="Logo" className="w-10 h-10 object-contain" />
             <img src={png} alt="Logo" className="w-10 h-10 object-contain" />
-            <img src={foto} alt="Logo" className="w-10 h-10 object-contain" />
+            <img src={foto} alt="foto" className="w-10 h-10 object-contain" />
           </div>
         </div>
       </div>
