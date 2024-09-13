@@ -4,7 +4,7 @@ export const categoryApi = api.injectEndpoints({
   endpoints: (build) => ({
     getProduct: build.query({
       query: (params) => ({
-        url: "/products",
+        url: `/products`,
         params,
       }),
       providesTags: ["Products"],
