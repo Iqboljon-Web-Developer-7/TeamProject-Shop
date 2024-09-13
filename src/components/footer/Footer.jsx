@@ -12,24 +12,24 @@ import foto from "../../assets/5.svg";
 
 const Footer = () => {
   return (
-    <div className="footer py-10">
+    <div className="footer pt-10">
       <div className="footer__top flex flex-wrap container mx-auto px-5  bg-black mt-4 rounded-[20px] py-9 dark:bg-white dark:text-black  ">
         <div>
-          <p className="text-5xl font-[900] w-[700px] text-white dark:text-black">
+          <p className="footer__tob text-5xl font-[900]  text-white dark:text-black">
             STAY UPTO DATE ABOUT OUR LATEST OFFERS{" "}
           </p>
         </div>
         <div>
-          <div className="p-2 bg-white w-96 flex items-center rounded-[60px] py-1 px-5 dark:bg-black dark:text-white">
+          <div className="footer__btn p-2 bg-white  flex items-center rounded-[60px] py-1 px-5 dark:bg-black dark:text-white ">
             <CgMail className="text-5xl dark:text-white" />
             <input
               type="text"
-              className=" w-72 text-zinc-500 text-[17px] py-2 px-10  dark:bg-black dark:text-white"
+              className=" text-zinc-500 text-[17px] py-2 px-2  dark:bg-black dark:text-white"
               placeholder="
  Enter your email address"
             />
           </div>
-          <button className="hero__btn w-96 py-2 mt-3 px-10 rounded-[60px] text-xl   bg-white dark:bg-black dark:text-white">
+          <button className="footer__btn hero__btn  py-2 mt-3 px-2 rounded-[60px] text-xl   bg-white dark:bg-black dark:text-white ">
             Subscribe to Newsletter
           </button>
         </div>
@@ -40,7 +40,7 @@ const Footer = () => {
             <p className="dark:text-white text-5xl font-[900] navbar__logo">
               SHOP.CO
             </p>
-            <p className="w-[310px] my-5">
+            <p className="w-[310px] my-5 footer__item">
               We have clothes that suits your style and which you’re proud to
               wear. From women to men.
             </p>
@@ -95,15 +95,16 @@ const Footer = () => {
         </div>
       </div>
       <div className="hr"></div>
-      <div className="bg-[#F0F0F0] py-5">
-        <div className="flex flex-col md:flex-row justify-between items-center container mx-auto px-5 py-6 bg-gray-800 text-white">
+      <div className="bg-[#F0F0F0] py-5 text-black dark:bg-black">
+
+        <div className="flex flex-col md:flex-row justify-between items-center container mx-auto px-5 py-6 bg-[#F0F0F0] text-white dark:bg-black">
           <div className="text-center md:text-left mb-4 md:mb-0">
-            <p>Shop.co © 2000-2023, All Rights Reserved</p>
+            <p className=" text-black dark:text-white dark:bg-black">Shop.co © 2000-2023, All Rights Reserved</p>
           </div>
-          <div className="flex gap-4 flex-wrap justify-center md:justify-start mb-4 md:mb-0">
-            <p className="text-xl">ABDUVORIS</p>
-            <p className="text-xl">IQBOLJON</p>
-            <p className="text-xl">ULUG'BEK</p>
+          <div className="bottom flex gap-4 flex-wrap justify-center md:justify-start mb-4 md:mb-0">
+            <p className="text-xl text-black dark:text-white">ABDUVORIS</p>
+            <p className="text-xl text-black dark:text-white">IQBOLJON</p>
+            <p className="text-xl text-black dark:text-white">ULUG'BEK</p>
           </div>
           <div className="flex gap-2 justify-center md:justify-start">
             <img src={rasm} alt="Logo" className="w-10 h-10 object-contain" />
