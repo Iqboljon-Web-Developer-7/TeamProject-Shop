@@ -1,5 +1,6 @@
 import Brands from "@/components/brands/Brands";
 import Card from "@/components/card/Card";
+import Comments from "@/components/comments/Comments";
 import DressStyles from "@/components/dressStyles/DressStyles";
 import Hero from "@/components/hero/Hero";
 import { useGetProductQuery } from "@/redux/api/category-api";
@@ -14,6 +15,7 @@ const Home = () => {
       <Brands />
       <Card data={data} error={error} isLoading={isLoading} />
       <DressStyles />
+      <Comments />
     </>
   );
 };
