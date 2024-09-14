@@ -1,0 +1,35 @@
+.header .active {
+  color: blue !important;
+}
+
+button:active {
+  transform: scale(0.5);
+  outline: none;
+}
+
+.hero__btn {
+  transition: 1s;
+}
+.hero__btn:hover {
+  background-color: gold !important;
+  color: black;
+}
+
+@media (max-width: 1020px) {
+  .ccc {
+    margin-top: 100px;
+    width: 100% !important;
+  }
+}
+@media (max-width: 500px) {
+  .hero {
+    padding-top: 0px !important;
+  }
+  .hero__title {
+    font-size: 32px !important;
+    width: 100% !important;
+  }
+  .hero__text {
+    width: 100% !important;
+  }
+}/*# sourceMappingURL=Hero.css.map */
