@@ -23,6 +23,7 @@ const CreateProduct = () => {
     data.id = uuid();
     data.price = +data.price;
     data.rating = +data.rating;
+    data.url = data.url.split(/\n/gi);
 
     let isPut = true;
 
@@ -85,6 +86,7 @@ const CreateProduct = () => {
           name="rating"
           htmlmax={5}
           onChange={(e) => validateNumber(e.target)}
+          placeholder="1-5"
         />
         <TextField
           multiline
@@ -106,8 +108,17 @@ const CreateProduct = () => {
           variant="filled"
           name="colors"
         />
-        <Button className="border border-sky-300" htmlType="submit">
-          {isLoading ? <CircularProgress /> : "Create"}
+        <Button htmlType="reset">Clear Form</Button>
+        <Button
+          className="border border-sky-300"
+          htmlType="submit"
+          type={"primary"}
+        >
+          {isLoading ? (
+            <CircularProgress style={{ width: "1.22rem", height: "1.22rem" }} />
+          ) : (
+            "Create"
+          )}
         </Button>
       </form>
     </>
