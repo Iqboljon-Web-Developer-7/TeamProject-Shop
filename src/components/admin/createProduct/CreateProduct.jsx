@@ -34,7 +34,11 @@ const CreateProduct = () => {
     });
     data.oldPrice = 0;
     if (isPut) {
-      createProduct({ body: data });
+      createProduct({ body: data })
+        .unwrap()
+        .then(() => {
+          message.success("Successfully created product!");
+        });
     } else {
       message.error(`Fill all inputs!`);
     }

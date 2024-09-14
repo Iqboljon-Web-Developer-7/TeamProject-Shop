@@ -54,13 +54,13 @@ const Card = ({ data, error, isLoading }) => {
               <div className="flex items-center mt-2">
                 <div className="text-lg font-bold text-gray-900">
                   ${product.price}
-                  {product.oldPrice && (
+                  {product.oldPrice ? (
                     <span className="text-sm text-gray-500 line-through ml-2">
                       ${product.oldPrice}
                     </span>
-                  )}
+                  ) : null}
                 </div>
-                {product.oldPrice && (
+                {product.oldPrice ? (
                   <span className="text-sm text-red-500 ml-2">
                     -
                     {Math.round(
@@ -69,7 +69,7 @@ const Card = ({ data, error, isLoading }) => {
                     )}
                     %
                   </span>
-                )}
+                ) : null}
               </div>
               <div className="flex items-center justify-between mt-4">
                 <button className="flex items-center text-gray-700 hover:text-blue-500 transition">
