@@ -7,7 +7,7 @@ import { useGetProductQuery } from "@/redux/api/product-api";
 import React from "react";
 
 const Home = () => {
-  const { data, error, isLoading } = useGetProductQuery({ limit: 10 });
+  const { data, error, isLoading } = useGetProductQuery();
 
   return (
     <>

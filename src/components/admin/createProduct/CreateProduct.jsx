@@ -1,19 +1,69 @@
-import { InputAdornment, TextField } from "@mui/material";
+import { useCreateProductMutation } from "@/redux/api/product-api";
+import { CircularProgress, InputAdornment, TextField } from "@mui/material";
 import { Button } from "antd";
 import React from "react";
+import { v4 as uuid } from "uuid";
+import { message } from "antd";
 
 const CreateProduct = () => {
+  const [createProduct, { isLoading }] = useCreateProductMutation();
+
+  function validateNumber(input) {
+    if (input.value > 5) {
+      input.value = 5;
+    }
+  }
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const formData = new FormData(e.target);
+    const data = Object.fromEntries(formData.entries());
+
+    data.id = uuid();
+    data.price = +data.price;
+    data.rating = +data.rating;
+
+    let isPut = true;
+
+    let keysList = Object.keys(data);
+    keysList.forEach((item) => {
+      if (!data[item]) {
+        isPut = false;
+      }
+    });
+    data.oldPrice = 0;
+    if (isPut) {
+      createProduct({ body: data });
+    } else {
+      message.error(`Fill all inputs!`);
+    }
+  };
   return (
     <>
       <h1 className="text-2xl my-5">Create Product</h1>
-      <p></p>
-      <form className="max-w-96 flex flex-col gap-2">
-        <TextField id="filled-basic" label="Title" variant="filled" />
-        <TextField multiline id="filled-basic" label="Desc" variant="filled" />
+      <form
+        className="max-w-96 flex flex-col gap-2"
+        onSubmit={(e) => handleSubmit(e)}
+      >
+        <TextField
+          id="filled-basic"
+          label="Title"
+          variant="filled"
+          name="title"
+        />
+        <TextField
+          multiline
+          id="filled-basic"
+          label="Desc"
+          variant="filled"
+          name="desc"
+        />
         <TextField
           type="number"
           id="filled-basic"
           label="Price"
+          name="price"
           slotProps={{
             input: {
               startAdornment: (
@@ -28,16 +78,33 @@ const CreateProduct = () => {
           id="filled-basic"
           label="Rating"
           variant="filled"
+          name="rating"
+          htmlmax={5}
+          onChange={(e) => validateNumber(e.target)}
         />
-        <TextField multiline id="filled-basic" label="Imgs" variant="filled" />
-        <TextField id="filled-basic" label="Category" variant="filled" />
+        <TextField
+          multiline
+          id="filled-basic"
+          label="Imgs"
+          variant="filled"
+          name="url"
+        />
+        <TextField
+          id="filled-basic"
+          label="Category"
+          variant="filled"
+          name="category"
+        />
         <TextField
           multiline
           id="filled-basic"
           label="Colors"
           variant="filled"
+          name="colors"
         />
-        <Button>Create</Button>
+        <Button className="border border-sky-300" htmlType="submit">
+          {isLoading ? <CircularProgress /> : "Create"}
+        </Button>
       </form>
     </>
   );

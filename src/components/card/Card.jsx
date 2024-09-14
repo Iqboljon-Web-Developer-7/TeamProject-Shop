@@ -12,6 +12,8 @@ const Card = ({ data, error, isLoading }) => {
   const startIndex = (currentPage - 1) * itemsPerPage;
   const slicedData = data?.slice(startIndex, startIndex + itemsPerPage);
 
+  console.log(slicedData);
+
   return (
     <div className="flex flex-col  p-4">
       <div className="container mx-auto my-8 ">

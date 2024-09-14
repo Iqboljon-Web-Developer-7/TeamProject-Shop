@@ -10,7 +10,7 @@ export const productsApi = api.injectEndpoints({
       providesTags: ["Products"],
     }),
     createProduct: build.mutation({
-      query: (body) => ({
+      query: ({ body }) => ({
         url: "/products",
         method: "POST",
         body,
