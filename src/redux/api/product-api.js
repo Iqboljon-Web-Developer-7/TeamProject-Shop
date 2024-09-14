@@ -1,6 +1,6 @@
 import { api } from "./index";
 
-export const categoryApi = api.injectEndpoints({
+export const productsApi = api.injectEndpoints({
   endpoints: (build) => ({
     getProduct: build.query({
       query: (params) => ({
@@ -39,4 +39,4 @@ export const {
   useCreateProductMutation,
   useUpdateProductMutation,
   useDeleteProductMutation,
-} = categoryApi;
+} = productsApi;

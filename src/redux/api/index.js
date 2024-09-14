@@ -4,9 +4,9 @@ import { createApi, fetchBaseQuery, retry } from "@reduxjs/toolkit/query/react";
 const baseQuery = async (args, api, extraOptions) => {
   const { dispatch } = api;
   const rawBaseQuery = fetchBaseQuery({
-    baseUrl: "https://66e18a1cc831c8811b556685.mockapi.io", // o'zgaradi
+    baseUrl: "https://66e18a1cc831c8811b556685.mockapi.io",
     prepareHeaders: (headers) => {
-      const token = localStorage.getItem("x-auth-token"); // o'zgaradi
+      const token = localStorage.getItem("x-auth-token");
       if (token) {
         headers.set("Authorization", `Bearer ${token}`);
       }
@@ -28,6 +28,6 @@ const baseQueryWithRetry = retry(baseQuery, { maxRetries: 1 });
 export const api = createApi({
   reducerPath: "myApi",
   baseQuery: baseQueryWithRetry,
-  tagTypes: ["Products"], // o'zgaradi
+  tagTypes: ["Products"],
   endpoints: () => ({}),
 });

@@ -113,11 +113,7 @@ const Header = () => {
                 to={"/card"}
               >
                 <IoCartOutline className="text-2xl" />
-                <sup
-                  className="px-1 py-2 rounded-full
-mb-3
-text-white bg-lime-600"
-                >
+                <sup className="px-1 py-2 rounded-full mb-3 text-white bg-lime-600">
                   0
                 </sup>
                 <p className="text-xs"> </p>{" "}
@@ -132,7 +128,7 @@ text-white bg-lime-600"
             >
               <FaSun className="text-dark text-3xl" />
             </button>
-            <Link to={"/admin"}>
+            <Link to={"/admin/createProducts"}>
               <CgProfile className="text-3xl" />
             </Link>
             <div
