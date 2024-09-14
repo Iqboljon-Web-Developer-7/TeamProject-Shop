@@ -32,9 +32,6 @@ body {
 }
 @media (max-width: 550px) {
   .swiper-slide {
-    width: 60% !important;
+    width: 100% !important;
   }
 }
-/* .swiper-slide.item-1 { */
-/* width: 60% !important; */
-/* } */

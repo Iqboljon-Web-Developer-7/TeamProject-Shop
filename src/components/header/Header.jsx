@@ -8,7 +8,7 @@ import { FaRegHeart } from "react-icons/fa";
 import { IoCartOutline } from "react-icons/io5";
 import { LuDelete } from "react-icons/lu";
 import { IoIosSearch } from "react-icons/io";
-
+import { CgProfile } from "react-icons/cg";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -22,7 +22,7 @@ const Header = () => {
     console.log(1);
   };
   return (
-    <div className="header mb-32 py-1">
+    <div className="header py-1">
       <div className=" container mx-auto px-5">
         <nav
           className="navbar 
@@ -71,11 +71,15 @@ const Header = () => {
 "
           >
             <div className="header__bag flex ">
-<button><IoIosSearch />
-</button>
-<input type="text" className="text-black dark:bg-black dark:text-white"  placeholder="Search for products..."/>
-</div>
-
+              <button>
+                <IoIosSearch />
+              </button>
+              <input
+                type="text"
+                className="text-black dark:bg-black dark:text-white"
+                placeholder="Search for products..."
+              />
+            </div>
           </div>
           <div
             className={`nav__collect ${
@@ -121,9 +125,6 @@ text-white bg-lime-600"
             </ul>
           </div>
 
-
-
-
           <div className="flex gap-2 items-center">
             <button
               onClick={toggleDarkMode}
@@ -131,6 +132,9 @@ text-white bg-lime-600"
             >
               <FaSun className="text-dark text-3xl" />
             </button>
+            <Link to={"/admin"}>
+              <CgProfile className="text-3xl" />
+            </Link>
             <div
               onClick={toggleMenu}
               className="navbar__menu cursor-pointer text-2xl"
