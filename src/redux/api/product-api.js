@@ -9,6 +9,13 @@ export const productsApi = api.injectEndpoints({
       }),
       providesTags: ["Products"],
     }),
+    getCategories: build.query({
+      query: (params) => ({
+        url: "/categories",
+        params,
+      }),
+      providesTags: ["Categories"],
+    }),
     createProduct: build.mutation({
       query: ({ body }) => ({
         url: "/products",
@@ -16,6 +23,14 @@ export const productsApi = api.injectEndpoints({
         body,
       }),
       invalidatesTags: ["Products"],
+    }),
+    createCategory: build.mutation({
+      query: ({ body }) => ({
+        url: "/categories",
+        method: "POST",
+        body,
+      }),
+      invalidatesTags: ["Categories"],
     }),
     updateProduct: build.mutation({
       query: ({ id, body }) => ({
@@ -25,6 +40,13 @@ export const productsApi = api.injectEndpoints({
       }),
       invalidatesTags: ["Products"],
     }),
+    updateCategory: build.mutation({
+      query: ({ id, body }) => ({
+        url: `/categories/${id}`,
+        method: "PUT",
+        body,
+      }),
+    }),
     deleteProduct: build.mutation({
       query: (id) => ({
         url: `/products/${id}`,
@@ -32,12 +54,23 @@ export const productsApi = api.injectEndpoints({
       }),
       invalidatesTags: ["Products"],
     }),
+    deleteCategory: build.mutation({
+      query: ({ id }) => ({
+        url: `/categories/${id}`,
+        method: "DELETE",
+      }),
+      invalidatesTags: ["Categories"],
+    }),
   }),
 });
 
 export const {
   useGetProductQuery,
+  useGetCategoriesQuery,
   useCreateProductMutation,
+  useCreateCategoryMutation,
   useUpdateProductMutation,
+  useUpdateCategoryMutation,
   useDeleteProductMutation,
+  useDeleteCategoryMutation,
 } = productsApi;

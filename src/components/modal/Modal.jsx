@@ -12,6 +12,12 @@ export default function UniModal({ title, product }) {
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
+  function validateNumber(input) {
+    if (input.value > 5) {
+      input.value = 5;
+    }
+  }
+
   const handleSubmit = (event) => {
     event.preventDefault();
 
@@ -70,6 +76,7 @@ export default function UniModal({ title, product }) {
               defaultValue={product.title}
             />
             <TextField
+              onChange={(e) => validateNumber(e.target)}
               id="rating"
               label="Rating"
               name="rating"
