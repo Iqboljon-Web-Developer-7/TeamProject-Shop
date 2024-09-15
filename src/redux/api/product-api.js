@@ -23,6 +23,7 @@ export const productsApi = api.injectEndpoints({
         method: "PUT",
         body,
       }),
+      invalidatesTags: ["Products"],
     }),
     deleteProduct: build.mutation({
       query: (id) => ({

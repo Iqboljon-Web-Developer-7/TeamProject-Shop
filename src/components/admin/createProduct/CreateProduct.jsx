@@ -1,4 +1,7 @@
-import { useCreateProductMutation } from "@/redux/api/product-api";
+import {
+  useCreateProductMutation,
+  useGetProductQuery,
+} from "@/redux/api/product-api";
 import { CircularProgress, InputAdornment, TextField } from "@mui/material";
 import { Button } from "antd";
 import React from "react";
@@ -38,6 +41,7 @@ const CreateProduct = () => {
       createProduct({ body: data })
         .unwrap()
         .then(() => {
+          e.target.reset();
           message.success("Successfully created product!");
         });
     } else {
