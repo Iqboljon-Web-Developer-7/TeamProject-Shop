@@ -12,7 +12,6 @@ const ManageProducts = () => {
   const { data, isLoading, error } = useGetProductQuery();
   const [deleteProduct, { isLoading: deleteLoading }] =
     useDeleteProductMutation();
-
   if (isLoading)
     return (
       <div className="flex flex-wrap justify-center mx-auto container gap-6 mb-6">

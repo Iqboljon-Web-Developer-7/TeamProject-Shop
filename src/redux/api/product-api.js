@@ -46,6 +46,7 @@ export const productsApi = api.injectEndpoints({
         method: "PUT",
         body,
       }),
+      invalidatesTags: ["Categories"],
     }),
     deleteProduct: build.mutation({
       query: (id) => ({
