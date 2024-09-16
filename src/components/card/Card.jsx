@@ -14,6 +14,8 @@ const Card = ({ data, error, isLoading, header }) => {
   const itemsPerPage = 8;
   const totalItems = data?.length || 0;
   const dispatch = useDispatch();
+  const cart = useSelector((state) => state.cart.value);
+  console.log(cart);
   const wishlist = useSelector((state) => state.wishlist?.value || []);
 
   if (isLoading) return <div>Loading...</div>;

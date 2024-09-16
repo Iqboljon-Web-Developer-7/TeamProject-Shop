@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { addCart, removeCart, decreaseQuantity } from "@/redux/cartSlice";
 
 const Cart = () => {
+  const dispatch = useDispatch(); // Не хватало этой строки
   const items = useSelector((state) => state.cart.value);
   console.log(items);
 
@@ -17,6 +18,7 @@ const Cart = () => {
   const discount = subtotal * 0.2;
   const deliveryFee = 15;
   const total = subtotal - discount + deliveryFee;
+
   return (
     <div className="flex flex-col md:flex-row gap-6 p-6">
       <div className="flex-1">
@@ -31,7 +33,7 @@ const Cart = () => {
             >
               <div className="flex items-center">
                 <img
-                  src={item.image}
+                  src={item.url[0]}
                   alt={item.name}
                   className="w-20 h-20 object-cover rounded"
                 />
