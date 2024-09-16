@@ -1,22 +1,35 @@
 import React, { useState } from "react";
-import { AiOutlineHeart, AiOutlineShoppingCart } from "react-icons/ai";
+import {
+  AiOutlineHeart,
+  AiFillHeart,
+  AiOutlineShoppingCart,
+} from "react-icons/ai";
 import { Pagination } from "antd";
+import { useDispatch, useSelector } from "react-redux";
+import { toggleWishlist } from "@/redux/wishlistSlice";
+import { addCart } from "@/redux/cartSlice";
 
-const Card = ({ data, error, isLoading }) => {
+const Card = ({ data, error, isLoading, header }) => {
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 8;
   const totalItems = data?.length || 0;
+  const dispatch = useDispatch();
+  const wishlist = useSelector((state) => state.wishlist?.value || []);
+
   if (isLoading) return <div>Loading...</div>;
   if (error) return <div>Error loading products: {error.message}</div>;
 
   const startIndex = (currentPage - 1) * itemsPerPage;
   const slicedData = data?.slice(startIndex, startIndex + itemsPerPage);
 
+  const isInWishlist = (productId) =>
+    wishlist.some((item) => item.id === productId);
+
   return (
-    <div className="flex flex-col  p-4">
-      <div className="container mx-auto my-8 ">
+    <div className="flex flex-col p-4">
+      <div className="container mx-auto my-8">
         <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-          Popular Products
+          {header}
         </h1>
       </div>
 
@@ -32,8 +45,17 @@ const Card = ({ data, error, isLoading }) => {
                 alt={product.title}
                 className="w-full h-56 object-cover"
               />
-              <button className="absolute top-2 right-2 text-gray-600 hover:text-red-500 transition">
-                <AiOutlineHeart size={24} />
+              <button
+                onClick={() => dispatch(toggleWishlist(product))}
+                className={`absolute top-2 right-2 transition ${
+                  isInWishlist(product.id) ? "text-red-500" : "text-gray-600"
+                } hover:text-red-500`}
+              >
+                {isInWishlist(product.id) ? (
+                  <AiFillHeart size={24} />
+                ) : (
+                  <AiOutlineHeart size={24} />
+                )}
               </button>
             </div>
             <div className="p-3">
@@ -52,13 +74,13 @@ const Card = ({ data, error, isLoading }) => {
               <div className="flex items-center mt-2">
                 <div className="text-lg font-bold text-gray-900">
                   ${product.price}
-                  {product.oldPrice && (
+                  {product.oldPrice ? (
                     <span className="text-sm text-gray-500 line-through ml-2">
                       ${product.oldPrice}
                     </span>
-                  )}
+                  ) : null}
                 </div>
-                {product.oldPrice && (
+                {product.oldPrice ? (
                   <span className="text-sm text-red-500 ml-2">
                     -
                     {Math.round(
@@ -67,10 +89,13 @@ const Card = ({ data, error, isLoading }) => {
                     )}
                     %
                   </span>
-                )}
+                ) : null}
               </div>
               <div className="flex items-center justify-between mt-4">
-                <button className="flex items-center text-gray-700 hover:text-blue-500 transition">
+                <button
+                  onClick={() => dispatch(addCart({ ...product, quantity: 1 }))}
+                  className="flex items-center text-gray-700 hover:text-blue-500 transition"
+                >
                   <AiOutlineShoppingCart size={20} className="mr-1" />
                   Add to Cart
                 </button>

@@ -13,7 +13,12 @@ const Home = () => {
     <>
       <Hero />
       <Brands />
-      <Card data={data} error={error} isLoading={isLoading} />
+      <Card
+        data={data}
+        error={error}
+        isLoading={isLoading}
+        header={"Popular Products"}
+      />
       <DressStyles />
       <Comments />
     </>

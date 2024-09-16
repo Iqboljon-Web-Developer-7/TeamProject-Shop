@@ -9,7 +9,6 @@ import { IoCartOutline } from "react-icons/io5";
 import { LuDelete } from "react-icons/lu";
 import { IoIosSearch } from "react-icons/io";
 
-
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -71,11 +70,15 @@ const Header = () => {
 "
           >
             <div className="header__bag flex ">
-<button><IoIosSearch />
-</button>
-<input type="text" className="text-black dark:bg-black dark:text-white"  placeholder="Search for products..."/>
-</div>
-
+              <button>
+                <IoIosSearch />
+              </button>
+              <input
+                type="text"
+                className="text-black dark:bg-black dark:text-white"
+                placeholder="Search for products..."
+              />
+            </div>
           </div>
           <div
             className={`nav__collect ${
@@ -106,7 +109,7 @@ const Header = () => {
                 className={
                   " text-black dark:text-white  flex gap-0 items-center"
                 }
-                to={"/card"}
+                to={"/cart"}
               >
                 <IoCartOutline className="text-2xl" />
                 <sup
@@ -120,9 +123,6 @@ text-white bg-lime-600"
               </NavLink>
             </ul>
           </div>
-
-
-
 
           <div className="flex gap-2 items-center">
             <button
