@@ -110,7 +110,7 @@ const Header = () => {
                 className={
                   " text-black dark:text-white  flex gap-0 items-center"
                 }
-                to={"/card"}
+                to={"/cart"}
               >
                 <IoCartOutline className="text-2xl" />
                 <sup className="px-1 py-2 rounded-full mb-3 text-white bg-lime-600">

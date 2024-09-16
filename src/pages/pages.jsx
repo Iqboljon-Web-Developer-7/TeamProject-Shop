@@ -3,6 +3,8 @@ import { Routes, Route } from "react-router-dom";
 import Home from "./home/Home";
 import Layout from "@/components/layout/Layout";
 import Not from "@/components/not-found/Not";
+import Wishlist from "./wishlist/Wishlist";
+import Cart from "./cart/Cart";
 import Admin from "./admin/Admin";
 import CreateProduct from "@/components/admin/createProduct/CreateProduct";
 import ManageProducts from "@/components/admin/manageProduct/ManageProduct";
@@ -16,6 +18,8 @@ const Pages = () => {
         <Route path="/" element={<Layout />}>
           <Route path="" element={<Home />} />
           <Route path="*" element={<Not />} />
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/wishlist" element={<Wishlist />} />
         </Route>
         <Route path="/admin" element={<Admin />}>
           <Route path="createProducts" element={<CreateProduct />} />
